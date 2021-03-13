@@ -1,7 +1,7 @@
 package LinkedList;
 public class LinkedList{
    
-   private static class Node{
+   class Node{
       int data;
       Node next;
 
@@ -10,10 +10,10 @@ public class LinkedList{
       }
   }      
 
-   private static Node head;
-   private static int size;
+   Node head;
+   int size;
 
-   private static void addFront(int data){
+   public void addFront(int data){
       //Add new node
       Node newNode = new Node(data);
 
@@ -33,7 +33,7 @@ public class LinkedList{
       size++;
    }
 
-   private static int getFirst(){
+   public int getFirst(){
       //if list is empty
       if(head == null){
          throw new IllegalStateException("List is empty");
@@ -41,7 +41,7 @@ public class LinkedList{
       return head.data;
    }
 
-   private static int getLast(){
+   public int getLast(){
       //if list is empty
       if(head == null){
          throw new IllegalStateException("List is empty");
@@ -55,7 +55,7 @@ public class LinkedList{
       return current.data;
    }
 
-   private static void addBack(int data){
+   public void addBack(int data){
        //create newNode
       Node newNode = new Node(data);
 
@@ -81,7 +81,7 @@ public class LinkedList{
       size++;
    }
 
-   private static int getSize(){
+   public int getSize(){
       //if linked list is empty
       if(head == null) return 0;
 
@@ -98,12 +98,12 @@ public class LinkedList{
       return size;
    }
 
-   private static void clear(){
+   public void clear(){
       head = null;
       size = 0;
    }
 
-   private static void deleteValue(int value){
+   public void deleteValue(int value){
       //if head
       if(head == null){
          return;
@@ -129,31 +129,32 @@ public class LinkedList{
    }
 
   public static void main(String[] args) {
-   addFront(1);
-   addFront(0);
-   addBack(2);
-   addBack(3);
-   System.out.println(getFirst()); // 0
-   System.out.println(getLast());  //3
+   LinkedList linkedList = new LinkedList();
+   linkedList.addFront(1);
+   linkedList.addFront(0);
+   linkedList.addBack(2);
+   linkedList.addBack(3);
+   System.out.println(linkedList.getFirst()); // 0
+   System.out.println(linkedList.getLast());  //3
 
-   System.out.println(getSize());  //4
-   System.out.println(size);  //4
+   System.out.println(linkedList.getSize());  //4
+   System.out.println(linkedList.size);  //4
 
-   clear();
-   System.out.println(getSize());  //0
-   System.out.println(size);  //0
+   linkedList.clear();
+   System.out.println(linkedList.getSize());  //0
+   System.out.println(linkedList.size);  //0
 
-   addBack(1);
-   addBack(2);
-   addBack(3);
+   linkedList.addBack(1);
+   linkedList.addBack(2);
+   linkedList.addBack(3);
 
-   deleteValue(2);
+   linkedList.deleteValue(2);
 
-   System.out.println(getSize());  //2
-   System.out.println(size);  //2
+   System.out.println(linkedList.getSize());  //2
+   System.out.println(linkedList.size);  //2
 
-   System.out.println(getFirst());  //1
-   System.out.println(getLast());  //3
+   System.out.println(linkedList.getFirst());  //1
+   System.out.println(linkedList.getLast());  //3
 
   }
 }

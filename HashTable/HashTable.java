@@ -4,14 +4,15 @@ package HashTable;
 //Super fast lookups
 public class HashTable {
 
-   private static int INITIAL_SIZE = 16;
-   private static HashEntry[] data; //Array
+   int INITIAL_SIZE = 16;
+   HashEntry[] data; //Array
 
    //Linked List representation 
-   static class HashEntry{
+   class HashEntry{
       String key;
       String value;
       HashEntry next;
+      
         public HashEntry(String key, String value){
            this.key = key;
            this.value = value;

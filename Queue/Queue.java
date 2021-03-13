@@ -3,7 +3,7 @@ package Queue;
 //FIFO -> First in First Out
 public class Queue {
 
-   private static class Node{
+   class Node{
       int data;
       Node next;
       public Node(int data){
@@ -11,19 +11,19 @@ public class Queue {
       }
    }
 
-   public static Node head; //REMOVE THINGS HERE
-   public static Node tail; //ADD THINGS HERE
-   public static int size = 0;
+   Node head; //REMOVE THINGS HERE
+   Node tail; //ADD THINGS HERE
+   int size = 0;
 
-   public static int peek(){
+   public int peek(){
       return head.data;
    }
 
-   public static boolean isEmpty(){
+   public boolean isEmpty(){
       return (head == null);
    }
 
-   public static void add(int data){
+   public void add(int data){
       //Create new node
       Node newNode = new Node(data);
 
@@ -41,7 +41,7 @@ public class Queue {
       size++;
    }
 
-   public static int remove()
+   public int remove()
    {
       //if the queue is empty...
       if(head == null){
@@ -57,11 +57,12 @@ public class Queue {
    }
 
    public static void main(String[] args) {
-      add(1);
-      add(2);
-      add(3);
-      System.out.println(remove()); //1
-      System.out.println(remove()); //2
-      System.out.println(size); //1
+      Queue queue = new Queue();
+      queue.add(1);
+      queue.add(2);
+      queue.add(3);
+      System.out.println(queue.remove()); //1
+      System.out.println(queue.remove()); //2
+      System.out.println(queue.size); //1
    }
 }

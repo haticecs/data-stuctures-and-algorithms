@@ -5,7 +5,7 @@ import java.util.EmptyStackException;
 //LIFO->Last In First Out
 public class Stack{
 
-   private static class Node{
+   class Node{
       int data;
       Node next;
 
@@ -14,18 +14,18 @@ public class Stack{
       }
    }
 
-   private static Node head;   //ADD and REMOVE THINGS HERE
-   private static int size = 0;
+   Node head;   //ADD and REMOVE THINGS HERE
+   int size = 0;
 
-   public static int peek(){
+   public int peek(){
       return head.data;
    }
 
-   public static boolean isEmpty(){
+   public boolean isEmpty(){
       return (head == null);
    }
 
-   private static void push (int data){ //O(1)
+   public void push (int data){ //O(1)
       //create newNode
       Node newNode = new Node(data);
       //set its next to be head.
@@ -35,7 +35,7 @@ public class Stack{
       size ++;
    }
 
-   private static int pop (){ //O(1)
+   public int pop (){ //O(1)
       //If the stack is empty
       if(head == null){
          throw new EmptyStackException();
@@ -50,13 +50,13 @@ public class Stack{
 
 
    public static void main(String[] args) {
-      push(1);
-      push(2);
-      push(3);
-      System.out.println(pop()); //3
-      System.out.println(size); //2
-      System.out.println(pop()); //2
-      System.out.println(pop()); //1
+      Stack stack = new Stack();
+      stack.push(1);
+      stack.push(2);
+      stack.push(3);
+      System.out.println(stack.pop()); //3
+      System.out.println(stack.size); //2
+      System.out.println(stack.pop()); //2
+      System.out.println(stack.pop()); //1
    }
-   
 }

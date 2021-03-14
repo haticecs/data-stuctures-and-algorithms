@@ -127,8 +127,9 @@ public class LinkedList{
          current = current.next;
       }
    }
-
+   
   public static void main(String[] args) {
+     
    LinkedList linkedList = new LinkedList();
    linkedList.addFront(1);
    linkedList.addFront(0);

@@ -1,7 +1,7 @@
 package HashTable;
 
-//HashTable are basically array of linked lists.
-//Super fast lookups
+// HashTable are basically array of linked lists.
+// Super fast lookups
 public class HashTable {
 
    int INITIAL_SIZE = 16;

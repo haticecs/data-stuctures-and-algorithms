@@ -2,7 +2,7 @@ package Stack;
 
 import java.util.EmptyStackException;
 
-//LIFO->Last In First Out
+// LIFO->Last In First Out
 public class Stack{
 
    class Node{
@@ -47,7 +47,6 @@ public class Stack{
       size--;
       return data;
    }
-
 
    public static void main(String[] args) {
       Stack stack = new Stack();

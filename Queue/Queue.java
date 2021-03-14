@@ -1,6 +1,6 @@
 package Queue;
 
-//FIFO -> First in First Out
+// FIFO -> First in First Out
 public class Queue {
 
    class Node{

@@ -41,25 +41,40 @@ public class ArrayRotation {
     int[] array2g = { 2, 3, 4, 5, 6, 7, 1 };
     // isRotation(array1, array2g) should return true.
     System.out.println(isRotation(array1, array2g));
+
+    int[] array2h = { 2, 4, 5, 6, 7, 1 };
+    // isRotation(array1, array2h) should return false.
+    System.out.println(isRotation(array1, array2h));
   }
 
   // Implement your solution below.
   public static Boolean isRotation(int[] array1, int[] array2) {
     int len = array1.length;
-    int diff = 0;
+    int len2 = array2.length;
+
+    //If lengths are not equal, return false
+    if (len != len2) {
+      return false;
+    }
+
+    //Finding the difference between indexes
+    int diff = -1;
     for (int i = 0; i < len; i++) {
       if (array1[0] == array2[i]) {
         diff = i;
         break;
       }
     }
+    //If there isn't chosen element, first element, in the second array return false
+    if (diff == -1) {
+      return false;
+    }
+    //Check all items in the array with the rotation difference
     for (int j = 0; j < len; j++) {
       if (array1[j] != array2[(j + diff) % len]) {
         return false;
-      } else if (j == len - 1) {
-        return true;
       }
     }
-    return false;
+    return true;
   }
 }
